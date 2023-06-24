@@ -14,7 +14,7 @@
     "esModuleInterop": true
   },
   "paths": {
-    "@/*": ["./*"]
+    "@/*": ["./src/*"]
   },
   "include": ["index.ts", "**/*.ts"],
   "exclude": ["node_modules"]
