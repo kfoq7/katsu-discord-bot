@@ -9,8 +9,7 @@ export default function messageCreate(client: Client, message: Message) {
   const cmd = args.shift()?.toLowerCase() ?? ''
 
   const command =
-    client.command.get(cmd) ||
-    client.command.find(c => c.aliases && c.aliases.includes(cmd))
+    client.command.get(cmd) || client.command.find(c => c.aliases && c.aliases.includes(cmd))
 
   try {
     command?.execute({ client, message, args, cmd })

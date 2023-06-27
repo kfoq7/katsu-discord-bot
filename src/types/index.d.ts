@@ -10,3 +10,5 @@ declare module 'discord.js' {
 
 export * from './client'
 export * from './command'
+
+export * from './message'

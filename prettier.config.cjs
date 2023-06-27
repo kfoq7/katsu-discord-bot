@@ -1,3 +1,4 @@
+/* eslint no-undef: 0 */
 const options = {
   arrowParens: 'avoid',
   singleQuote: true,
@@ -5,7 +6,8 @@ const options = {
   endOfLine: 'lf',
   semi: false,
   tabWidth: 2,
-  trailingComma: 'none'
+  trailingComma: 'all',
+  printWidth: 100,
 }
 
 module.exports = options

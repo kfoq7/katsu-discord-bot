@@ -3,7 +3,7 @@ import { Client, Collection, GatewayIntentBits } from 'discord.js'
 class DiscordClient {
   private client: Client
   private options = {
-    handlers: ['command-handler', 'event-handler']
+    handlers: ['command-handler', 'event-handler'],
   }
 
   constructor() {
@@ -11,8 +11,9 @@ class DiscordClient {
       intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent
-      ]
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildVoiceStates,
+      ],
     })
 
     this.createCollections()

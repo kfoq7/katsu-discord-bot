@@ -1,9 +1,12 @@
-import { Command } from '../types'
+import type { Command } from '../types'
 
-export default {
+const pingCommand: Command = {
   name: 'ping',
+  aliases: [],
   description: 'Response ping to pong',
   execute: async ({ message }) => {
-    message.channel.send('Pong!')
-  }
-} as Command
+    message.reply('Pong!')
+  },
+}
+
+export default pingCommand
