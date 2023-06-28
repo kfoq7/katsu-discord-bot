@@ -1,5 +1,6 @@
 import { getAudioUrl } from 'google-tts-api'
 import { createAudioPlayer, createAudioResource, joinVoiceChannel } from '@discordjs/voice'
+import { ApplicationError } from '../errors'
 import type { Command } from '../types'
 
 const speakCommand: Command = {
@@ -10,19 +11,16 @@ const speakCommand: Command = {
     const voiceChannel = message.member?.voice.channel
     const messageSpeak = args.join(' ')
 
+    if (!voiceChannel) {
+      throw new ApplicationError('Your are not in voice channel')
+    }
+
     if (!messageSpeak) {
-      message.channel.send('You should specify the message!')
-      return
+      throw new ApplicationError('You should specify the message!')
     }
 
     if (messageSpeak.length > 200) {
-      message.channel.send('The message is too long. `max length 200`')
-      return
-    }
-
-    if (!voiceChannel) {
-      message.channel.send('You are not in voice channel')
-      return
+      throw new ApplicationError('The message is too long. `max length 200`')
     }
 
     const audioURL = getAudioUrl(messageSpeak, {

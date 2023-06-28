@@ -12,3 +12,5 @@ export * from './client'
 export * from './command'
 
 export * from './message'
+
+export * from './errors'
