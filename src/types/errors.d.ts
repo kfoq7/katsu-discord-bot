@@ -4,6 +4,7 @@ export type Constructable<T> = new (...args: any[]) => T
 export interface ApplicationErrorField<Name extends string> {
   readonly name: `${Name}`
 }
+
 export function ApplicationErrorMixin<T, N extends string>(
   Base: Constructable<T>,
   name: N,

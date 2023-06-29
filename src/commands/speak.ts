@@ -1,5 +1,5 @@
-import { getAudioUrl } from 'google-tts-api'
 import { createAudioPlayer, createAudioResource, joinVoiceChannel } from '@discordjs/voice'
+import { getAudioUrl } from 'google-tts-api'
 import { ApplicationError } from '../errors'
 import type { Command } from '../types'
 
