@@ -24,8 +24,8 @@ const speakCommand: Command = {
     }
 
     const audioURL = getAudioUrl(messageSpeak, {
-      lang: 'es',
-      slow: true,
+      lang: 'pt',
+      slow: false,
       host: 'https://translate.google.com',
     })
 

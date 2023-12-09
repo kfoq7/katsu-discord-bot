@@ -1,12 +1,12 @@
-import { ColorResolvable } from 'discord.js'
+import type { ColorResolvable, ButtonStyle, ComponentEmojiResolvable } from 'discord.js'
 
-interface Field {
+export interface Field {
   name: string
   value: string
   inline?: boolean
 }
 
-interface Footer {
+export interface Footer {
   text: string
   iconURL?: string
 }
@@ -22,3 +22,16 @@ export interface EmbedOptions {
   timestamp?: boolean
   footer?: Footer
 }
+
+export interface Button {
+  id: string
+  label: string
+  style: ButtonStyle
+  disabled?: boolean
+  URL?: string
+  emoji?: ComponentEmojiResolvable
+}
+
+export type ComponentType = 'buttons' | 'select-menu'
+
+export type ActionRowOptions = ButtonsOptions
